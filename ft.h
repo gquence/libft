@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 19:39:44 by gquence           #+#    #+#             */
-/*   Updated: 2018/11/30 20:58:32 by gquence          ###   ########.fr       */
+/*   Created: 2018/11/30 17:27:56 by gquence           #+#    #+#             */
+/*   Updated: 2018/11/30 19:01:36 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#ifndef FT_H
+# define FT_H
 
-void	ft_strclr(char *s)
-{
-	while (*s)
-		*s++ = '\0';
-}
+# include <stdlib.h>
+
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+
+#endif
