@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char 	*buf;
 	char	*b;
@@ -25,7 +25,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 		return (NULL);
 	while (*s)
 	{
-		*buf = f(*s);
+		*buf = f(buf - b,*s);
 		buf++;
 		s++;
 	}

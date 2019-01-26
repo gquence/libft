@@ -1,4 +1,3 @@
-#include <string.h>
 void	*ft_memccpy(void *dest, void const *src, int c, int count)
 {
 	while (count--)

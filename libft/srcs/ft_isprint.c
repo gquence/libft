@@ -1,10 +1,8 @@
-#include <stdio.h>
 #include "ft.h"
-#include <ctype.h>
 
-int	main()
+inline int	ft_isprint(int c)
 {
-	printf("%d  \n", ft_isalnum('9'));
-
+	if (c >= 0x20 && c <= 0x7E)
+		return (0x4000);
 	return (0);
 }

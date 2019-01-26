@@ -1,13 +1,21 @@
-#include <stdio.h>
 #include "ft.h"
-#include <string.h>
-#include <bsd/string.h>
 
-int	main()
+size_t		ft_strlcat(char *s1, const char *s2, size_t n)
 {
-	char str1[] = "hello";
-	char str2[] = " suka";
-	strlcat(str1, str2, 5);
-	printf("%s",str1);
-	return (0);
+	size_t	s1_len;
+	size_t	s2_len;
+	size_t	i;
+
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	if (n < s1_len)
+		return (n + s2_len);
+	i = 0;
+	while (s2[i] != 0 && (s1_len + i + 1) < n)
+	{
+		s1[s1_len + i] = s2[i];
+		++i;
+	}
+	s1[s1_len + i] = 0;
+	return (s1_len + s2_len);
 }
