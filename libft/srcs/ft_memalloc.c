@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft.h"
 
 void	*ft_memalloc(size_t size)
@@ -19,6 +18,6 @@ void	*ft_memalloc(size_t size)
 
 	s = malloc(size);
 	if (s)
-		s= ft_memset(s, 0, size);
+		s = ft_memset(s, 0, size);
 	return (s);
 }

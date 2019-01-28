@@ -1,4 +1,3 @@
-#include <string.h>
 #include "ft.h"
 
 int	ft_strequ(const char *s1, const char *s2)

@@ -1,4 +1,6 @@
-void	*ft_memccpy(void *dest, void const *src, int c, int count)
+#include "ft.h"
+
+void	*ft_memccpy(void *dest, void const *src, int c, size_t count)
 {
 	while (count--)
 	{		

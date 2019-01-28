@@ -18,12 +18,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	if (*(char *)s2)
 		return (-*(unsigned char *)s2);
 }
-
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	char str1[] = "wtf";
-	char str2[] = "wtfn";
-	printf("%d\n",memcmp(str1, str2, atoi(av[1])));
-	printf("%d\n",ft_memcmp(str1, str2, atoi(av[1])));
-}

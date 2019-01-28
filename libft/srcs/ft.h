@@ -1,20 +1,28 @@
 #ifndef FT_H
 # define FT_H
 
-# include <string.h>
 # include <stdlib.h>
-# include <unistd.h>
 # include <stdio.h>
 
+# include <unistd.h>
+# include <string.h>
+# include <stddef.h>
+# include <strings.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
 
 # ifndef MEMORY
 # define MEMORY
 
-void		*ft_memset(void *memptr, int val, int num);
-void		ft_bzero(void *s, int n);
-void		*ft_memcpy(void *dest, void const  *src, int n);
-void		*ft_memccpy(void *dest, void const  *src, int n, int count);
-void		*ft_memmove(void *dest, void const *src, int n);
+void		*ft_memset(void *memptr, int val, size_t num);
+void		ft_bzero(void *s, size_t n);
+void		*ft_memcpy(void *dest, void const  *src, size_t n);
+void		*ft_memccpy(void *dest, void const  *src, int n, size_t count);
+void		*ft_memmove(void *dest, void const *src, size_t n);
 const void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memalloc(size_t size);
@@ -80,9 +88,6 @@ void	ft_putnbr(int n);
 # ifndef FILES
 # define FILES
 
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
