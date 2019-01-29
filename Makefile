@@ -59,13 +59,11 @@ NAME	= libft.a
 OBJ	= $(FILES:%.c=%.o)
 
 all: $(NAME)
+	$(CC) $(FLAGS) $(FILES)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
-
-$(OBJ): $(FILES)
-	$(CC) $(FLAGS) $(FILES)
 
 clean:
 	rm -f $(OBJ)

@@ -1,6 +1,6 @@
-#include "ft.h"
+#include "libft.h"
 #include <ctype.h>
-
+#include <stdio.h>
 void	ft_test_macro()
 {
 	printf("alnum:\n1-%d ", ft_isalnum('1'));

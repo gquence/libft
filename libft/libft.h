@@ -13,16 +13,10 @@
 #ifndef FT_H
 # define FT_H
 
-# include <stdio.h>
 
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
-# include <stddef.h>
-# include <strings.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648

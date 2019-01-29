@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/29 18:13:24 by gquence           #+#    #+#             */
-/*   Updated: 2019/01/29 18:13:28 by gquence          ###   ########.fr       */
+/*   Created: 2018/11/30 17:11:35 by gquence           #+#    #+#             */
+/*   Updated: 2018/11/30 19:01:51 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-int	ft_strnequ(const char *s1, const char *s2, size_t n)
+void	ft_memdel(void **ap)
 {
-	if (!ft_strncmp(s1, s2, n))
-		return (1);
-	return (0);
+	if (ap)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }
