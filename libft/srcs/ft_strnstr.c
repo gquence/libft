@@ -1,29 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/29 17:43:47 by gquence           #+#    #+#             */
+/*   Updated: 2019/01/29 17:43:48 by gquence          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	char	*c;
 	size_t	s2_pos;
 
-	if (!s1 || !s2 || !n)
+	if (!haystack || !needle || !n)
 		return (NULL);
-	c = (char *)s2;
-	while (*s1 && n)
+	c = (char *)needle;
+	while (*haystack && n)
 	{
 		s2_pos = 0;
-		while (*s2 && *s1 == *s2)
+		while (*needle && *haystack == *needle)
 		{
 			s2_pos++;
-			s1++;
-			s2++;
+			haystack++;
+			needle++;
 		}
 		while (s2_pos--)
-			s1--;
-		if (*s2 == 0)
-			return ((char *)s1);
+			haystack--;
+		if (*needle == 0)
+			return ((char *)haystack);
 		else
-			s2 = c;
-		s1++;
+			needle = c;
+		haystack++;
 		n--;
 	}
 	return (NULL);

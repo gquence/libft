@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/29 16:52:10 by gquence           #+#    #+#             */
+/*   Updated: 2019/01/29 16:52:13 by gquence          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
-#include <string.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -17,4 +28,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		return (*(unsigned char *)s1);
 	if (*(char *)s2)
 		return (-*(unsigned char *)s2);
+	return (0);
 }

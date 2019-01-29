@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/29 18:06:16 by gquence           #+#    #+#             */
+/*   Updated: 2019/01/29 18:08:43 by gquence          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
 
-int	ft_strlen_ch(char const *s, char c)
+int		ft_strlen_ch(char const *s, char c)
 {
-	int 	res;
+	int		res;
 
 	res = 0;
 	while (*s != c && *s++)
@@ -10,9 +22,9 @@ int	ft_strlen_ch(char const *s, char c)
 	return (res);
 }
 
-int	ft_split_count(char const *s, char c)
+int		ft_split_count(char const *s, char c)
 {
-	int i;
+	int		i;
 
 	i = 1;
 	while (*s)
@@ -31,7 +43,7 @@ int	ft_split_count(char const *s, char c)
 		{
 			i++;
 			while (ft_strlen_ch(s, c))
-				s++;	
+				s++;
 		}
 	}
 	return (i);
@@ -39,11 +51,11 @@ int	ft_split_count(char const *s, char c)
 
 char	**ft_strsplit(char const *s, char c)
 {
-	char **strs;
-	char **buf;
-	char *s_buf;
+	char	**strs;
+	char	**buf;
+	char	*s_buf;
 
-	strs = (char **)malloc(sizeof(char *) * ft_split_count(s, c));	
+	strs = (char **)malloc(sizeof(char *) * ft_split_count(s, c));
 	buf = strs;
 	while (*s)
 	{

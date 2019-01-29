@@ -1,10 +1,24 @@
-char	*ft_strcpy(char *dest, const char *src)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/29 16:56:10 by gquence           #+#    #+#             */
+/*   Updated: 2019/01/29 16:59:08 by gquence          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft.h"
+
+char	*ft_strcpy(char *dst, const char *src)
 {
 	char *str;
 
-	str = dest;
+	str = dst;
 	while (*src)
 		*str++ = *src++;
 	*str = '\0';
-	return (dest);
+	return (dst);
 }

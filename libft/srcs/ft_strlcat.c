@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/29 17:11:05 by gquence           #+#    #+#             */
+/*   Updated: 2019/01/29 17:12:04 by gquence          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
 
-size_t		ft_strlcat(char *s1, const char *s2, size_t n)
+size_t		ft_strlcat(char *restrict s1, const char *restrict s2, size_t n)
 {
 	size_t	s1_len;
 	size_t	s2_len;

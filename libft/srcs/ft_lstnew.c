@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/29 18:23:40 by gquence           #+#    #+#             */
+/*   Updated: 2019/01/29 18:24:23 by gquence          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
@@ -58,7 +70,6 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 		f(lst);
 		lst = lst->next;
 	}
-
 }
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))

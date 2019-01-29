@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/01/29 18:17:30 by gquence           #+#    #+#             */
+/*   Updated: 2019/01/29 18:19:06 by gquence          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
 
-int	ft_intlen(int i)
+int		ft_intlen(int i)
 {
 	int n;
 
@@ -13,7 +25,7 @@ int	ft_intlen(int i)
 	return (n);
 }
 
-char	*ft_char_min_int()
+char	*ft_char_min_int(void)
 {
 	char *str;
 
@@ -33,7 +45,7 @@ char	*ft_char_min_int()
 	return (str);
 }
 
-char	*ft_char_zero()
+char	*ft_char_zero(void)
 {
 	char *str;
 
