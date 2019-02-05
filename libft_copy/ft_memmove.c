@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/29 16:36:25 by gquence           #+#    #+#             */
-/*   Updated: 2019/01/29 16:51:36 by gquence          ###   ########.fr       */
+/*   Created: 2019/01/29 16:41:11 by gquence           #+#    #+#             */
+/*   Updated: 2019/02/05 17:00:38 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "libft.h"
 
-void	*ft_memccpy(void *restrict dest, void const *restrict src,\
-		int c, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	while (n--)
-	{
-		if ((*(char *)dest++ = *(char const *)src++) == (char)c)
-			return (dest);
-	}
-	return (NULL);
+	if (dest < src)
+		return (ft_memcpy(dest, src, len));
+	if (dest > src)
+		while (len--)
+			*((char *)dest + len) = *((char *)src + len);
+	return (dest);
 }

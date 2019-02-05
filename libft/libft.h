@@ -6,13 +6,12 @@
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 16:25:38 by gquence           #+#    #+#             */
-/*   Updated: 2019/01/29 17:58:11 by gquence          ###   ########.fr       */
+/*   Updated: 2019/02/05 23:11:38 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
-
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -28,20 +27,20 @@ void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *restrict dest, const void *restrict src,\
 					size_t n);
-void				*ft_memccpy(void *restrict eest, const void *restrict src,\
+void				*ft_memccpy(void *restrict dest, const void *restrict src,\
 					int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t len);
 const void			*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
-char				*ft_strnew(size_t size);
 
 # endif
 
 # ifndef STRING
 #  define STRING
 
+char				*ft_strnew(size_t size);
 int					ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
@@ -73,6 +72,7 @@ int					ft_toupper(int c);
 
 #  endif
 
+char				*ft_itoa(int n);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 void				ft_striter(char *s, void (*f)(char *));
@@ -112,6 +112,7 @@ typedef struct		s_list
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 

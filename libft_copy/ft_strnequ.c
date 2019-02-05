@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/29 16:36:25 by gquence           #+#    #+#             */
-/*   Updated: 2019/01/29 16:51:36 by gquence          ###   ########.fr       */
+/*   Created: 2019/01/29 18:13:24 by gquence           #+#    #+#             */
+/*   Updated: 2019/01/29 18:13:28 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "libft.h"
 
-void	*ft_memccpy(void *restrict dest, void const *restrict src,\
-		int c, size_t n)
+int	ft_strnequ(const char *s1, const char *s2, size_t n)
 {
-	while (n--)
-	{
-		if ((*(char *)dest++ = *(char const *)src++) == (char)c)
-			return (dest);
-	}
-	return (NULL);
+	if (!ft_strncmp(s1, s2, n))
+		return (1);
+	return (0);
 }

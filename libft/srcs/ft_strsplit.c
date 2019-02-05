@@ -6,13 +6,13 @@
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:06:16 by gquence           #+#    #+#             */
-/*   Updated: 2019/01/29 18:08:43 by gquence          ###   ########.fr       */
+/*   Updated: 2019/02/01 15:25:39 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strlen_ch(char const *s, char c)
+static int		ft_strlen_ch(char const *s, char c)
 {
 	int		res;
 
@@ -22,7 +22,7 @@ static int	ft_strlen_ch(char const *s, char c)
 	return (res);
 }
 
-static int	ft_split_count(char const *s, char c)
+static int		ft_split_count(char const *s, char c)
 {
 	int		i;
 
@@ -49,7 +49,7 @@ static int	ft_split_count(char const *s, char c)
 	return (i);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**strs;
 	char	**buf;

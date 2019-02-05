@@ -6,7 +6,7 @@
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:23:40 by gquence           #+#    #+#             */
-/*   Updated: 2019/01/29 18:24:23 by gquence          ###   ########.fr       */
+/*   Updated: 2019/02/01 16:04:58 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,65 +32,4 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	node->content_size = content_size;
 	node->next = NULL;
 	return (node);
-}
-
-void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
-{
-	t_list	*node;
-
-	if (!alst || !del)
-		return ;
-	node = *alst;
-	while (node)
-	{
-		del(node->content, node->content_size);
-		free(node);
-		node = node->next;
-	}
-	*alst = NULL;
-}
-
-void	ft_lstadd(t_list **alst, t_list *new)
-{
-	if (new)
-	{
-		if (!(*alst))
-			*alst = new;
-		new->next = *alst;
-		*alst = new;
-	}
-}
-
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
-{
-	if (!f)
-		return ;
-	while (lst)
-	{
-		f(lst);
-		lst = lst->next;
-	}
-}
-
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
-{
-	t_list	*node;
-	t_list	*buf;
-
-	if (!f || !lst)
-		return (NULL);
-	node = (t_list *)malloc(sizeof(t_list));
-	buf = node;
-	while (lst)
-	{
-		node = f(lst);
-		if (lst->next)
-		{
-			node = node->next;
-			lst = lst->next;
-		}
-		else
-			node->next = NULL;
-	}
-	return (buf);
 }
