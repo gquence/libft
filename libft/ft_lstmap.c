@@ -15,31 +15,21 @@
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*node;
-	t_list	*buf_node;
-	t_list	*buf;
-	void	*cont;
-
-	if (!lst || !f)
+	t_list	*node_buf;
+	
+	if (!f || !lst)
 		return (NULL);
-	if (!(buf = (t_list *)malloc(sizeof(t_list))))
-		return (NULL);
-	while (lst)
+	node = f(lst);
+	node_buf = node;
+	while (lst->next)
 	{
-		buf = f(lst);
-		if (!(node = (t_list *)malloc(sizeof(t_list))))
-			return (NULL);
-		if (!(cont = (void *)malloc(buf->content_size + 1)))
-			return (NULL);
-		if (!buf->content)
-			cont = NULL;
-		else
-			ft_memcpy(cont, buf->content, buf->content_size);
-		node->content = cont;
-		node->content_size = buf->content_size;
-		free(cont);
 		lst = lst->next;
+		if (!(node->next = f(lst)))
+		{
+			free(node->next);
+			return(NULL);
+		}
 		node = node->next;
 	}
-	node->next = NULL;
-	return (buf_node);
+	return (node_buf);
 }
