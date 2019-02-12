@@ -6,15 +6,15 @@
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 16:52:10 by gquence           #+#    #+#             */
-/*   Updated: 2019/01/29 16:52:13 by gquence          ###   ########.fr       */
+/*   Updated: 2019/02/12 21:48:53 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	while ((*(char *)s1 && *(char *)s2) && n)
+	while ((s1 && s2) && n)
 	{
 		if (*(char *)s1 != *(char *)s2)
 			return (*(unsigned char *)s1 - *(unsigned char *)s2);

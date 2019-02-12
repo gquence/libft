@@ -6,7 +6,7 @@
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:06:16 by gquence           #+#    #+#             */
-/*   Updated: 2019/02/01 15:25:39 by gquence          ###   ########.fr       */
+/*   Updated: 2019/02/12 22:02:24 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char			**ft_strsplit(char const *s, char c)
 	char	**buf;
 	char	*s_buf;
 
-	strs = (char **)malloc(sizeof(char *) * ft_split_count(s, c));
+	strs = (char **)malloc(sizeof(*strs) * ft_split_count(s, c));
 	buf = strs;
 	while (*s)
 	{
@@ -64,7 +64,7 @@ char			**ft_strsplit(char const *s, char c)
 			s++;
 			continue ;
 		}
-		*strs = malloc(sizeof(char) * (ft_strlen_ch(s, c) + 1));
+		*strs = (char *)malloc(sizeof(**strs) * (ft_strlen_ch(s, c) + 1));
 		s_buf = *strs;
 		while (ft_strlen_ch(s, c))
 			*s_buf++ = *s++;

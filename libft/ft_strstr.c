@@ -6,7 +6,7 @@
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 17:14:43 by gquence           #+#    #+#             */
-/*   Updated: 2019/01/29 18:12:23 by gquence          ###   ########.fr       */
+/*   Updated: 2019/02/12 22:58:30 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,24 @@
 char	*ft_strstr(const char *haystack, const char *needle)
 {
 	char *sbuf2;
+	char *sbuf1;
 
 	sbuf2 = (char *)needle;
+	if (!*haystack && !*needle)
+		return ((char *)haystack);
 	while (*haystack)
 	{
+		sbuf1 = (char *)haystack;
 		while (*(char *)haystack == *sbuf2 && *haystack && *sbuf2)
 		{
 			haystack++;
 			sbuf2++;
 		}
 		if (*sbuf2 != 0)
+		{
 			sbuf2 = (char *)needle;
+			haystack = (const char *)sbuf1;
+		}
 		else
 			return ((char *)haystack - (sbuf2 - (char *)needle));
 		haystack++;

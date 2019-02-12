@@ -6,7 +6,7 @@
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 17:43:47 by gquence           #+#    #+#             */
-/*   Updated: 2019/02/05 21:16:26 by gquence          ###   ########.fr       */
+/*   Updated: 2019/02/12 23:09:23 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	if (!haystack || !needle || !n)
 		return (NULL);
 	c = (char *)needle;
-	while (*haystack && n && (int)n > ft_strlen(c))
+	while (*haystack && n && (int)n >= ft_strlen(c))
 	{
 		s2_pos = 0;
 		while (*needle && *haystack == *needle)

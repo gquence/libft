@@ -6,7 +6,7 @@
 /*   By: gquence <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/29 18:12:34 by gquence           #+#    #+#             */
-/*   Updated: 2019/01/29 18:12:40 by gquence          ###   ########.fr       */
+/*   Updated: 2019/02/12 22:24:24 by gquence          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*str;
 	char	*sbuf;
 
+	if ((int)len < 0)
+		return (NULL);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	sbuf = str;
 	while (s[start] && len--)
