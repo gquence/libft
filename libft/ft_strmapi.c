@@ -17,7 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*buf;
 	char	*b;
 
-	buf = (char *)malloc(sizeof(s));
+	if (!(buf = (char *)malloc(sizeof(*buf) * (ft_strlen((char *)s) + 1))))
+		return(NULL);
 	b = buf;
 	if (!f)
 		return (NULL);

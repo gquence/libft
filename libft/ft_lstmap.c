@@ -16,11 +16,6 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*node;
 	t_list	*node_buf;
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> 56c909f35b0e009a53f5fa06594385e7c99a7f8d
 	if (!f || !lst)
 		return (NULL);
 	node = f(lst);
@@ -31,11 +26,7 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		if (!(node->next = f(lst)))
 		{
 			free(node->next);
-<<<<<<< HEAD
 			return (NULL);
-=======
-			return(NULL);
->>>>>>> 56c909f35b0e009a53f5fa06594385e7c99a7f8d
 		}
 		node = node->next;
 	}

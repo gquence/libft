@@ -55,7 +55,8 @@ char			**ft_strsplit(char const *s, char c)
 	char	**buf;
 	char	*s_buf;
 
-	strs = (char **)malloc(sizeof(*strs) * ft_split_count(s, c));
+	if (!(strs = (char **)malloc(sizeof(*strs) * ft_split_count(s, c))))
+	return (NULL);
 	buf = strs;
 	while (*s)
 	{
@@ -64,7 +65,8 @@ char			**ft_strsplit(char const *s, char c)
 			s++;
 			continue ;
 		}
-		*strs = (char *)malloc(sizeof(**strs) * (ft_strlen_ch(s, c) + 1));
+		if (!(*strs = (char *)malloc(sizeof(**strs) * (ft_strlen_ch(s, c) + 1))))
+		return (NULL);
 		s_buf = *strs;
 		while (ft_strlen_ch(s, c))
 			*s_buf++ = *s++;
